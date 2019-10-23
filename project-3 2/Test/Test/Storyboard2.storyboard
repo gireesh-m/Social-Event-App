@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jrr-u8-VR5">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main Page-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="mapView" id="BYZ-38-t0r" customClass="MainPage" customModule="Test" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8me-pw-uYu">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Next Party" id="U8G-OC-nUf">
+                                        <connections>
+                                            <action selector="showNext:" destination="BYZ-38-t0r" id="PH1-30-MMy"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Profile Button" style="plain" id="p8k-YJ-Udr">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="YOp-Vj-3Ea">
+                                            <rect key="frame" x="107" y="7" width="156" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Profile"/>
+                                            <connections>
+                                                <action selector="createEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PI2-mk-4GI"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem title="Log out Button" style="plain" id="B1G-jy-wdz">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dH8-FV-wNc">
+                                            <rect key="frame" x="273" y="7" width="62" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Log Out"/>
+                                            <connections>
+                                                <action selector="logoutAccount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vSA-Nk-cLZ"/>
+                                            </connections>
+                                        </button>
+                                        <connections>
+                                            <action selector="logoutAction:" destination="BYZ-38-t0r" id="PJe-mQ-Yw2"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Tib-3w-dE5">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Tib-3w-dE5" secondAttribute="trailing" id="5Zb-Dl-Fe2"/>
+                            <constraint firstAttribute="trailing" secondItem="8me-pw-uYu" secondAttribute="trailing" id="Mks-Nd-wiO"/>
+                            <constraint firstItem="Tib-3w-dE5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Uvp-TO-ycX"/>
+                            <constraint firstItem="Tib-3w-dE5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="hYb-WM-F7B"/>
+                            <constraint firstItem="8me-pw-uYu" firstAttribute="top" secondItem="Tib-3w-dE5" secondAttribute="bottom" id="kKH-31-XLN"/>
+                            <constraint firstItem="8me-pw-uYu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qsn-Jr-sP0"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8me-pw-uYu" secondAttribute="bottom" id="rJE-K8-R7A"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="tQ2-91-wPh">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="3Py-md-7yx">
+                            <connections>
+                                <action selector="showSearchBar:" destination="BYZ-38-t0r" id="cRl-VI-eMO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="Tib-3w-dE5" id="w7e-mv-xrT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1069.5999999999999" y="138.98050974512745"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4bf-80-JJy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jrr-u8-VR5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Gt5-9P-YxD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="fUQ-RV-BmW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M1f-Ie-YPW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>
